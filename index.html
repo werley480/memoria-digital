@@ -212,17 +212,29 @@ Com carinho ❤️
 
 <script>
 
-
 fetch("texto/texto_teste.txt")
+.then(response => {
 
-.then(resposta => resposta.text())
+    if (!response.ok) {
+        throw new Error("Status: " + response.status);
+    }
 
-.then(texto => {
-
-document.getElementById("texto").innerText = texto;
+    return response.text();
 
 })
 
+.then(texto => {
+
+    document.getElementById("texto").innerText = texto;
+
+})
+
+.catch(erro => {
+
+    document.getElementById("texto").innerText = "Erro: " + erro.message;
+    console.error(erro);
+
+});
 
 </script>
 
