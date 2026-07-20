@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Uma Memória Especial</title>
+
+<style>
+
+body {
+    margin: 0;
+    background: #f4eee6;
+    font-family: Georgia, serif;
+    color: #4a3728;
+}
+
+
+.container {
+
+    max-width: 600px;
+    margin: 30px auto;
+    background: #fffaf4;
+    padding: 30px;
+    border-radius: 25px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    text-align: center;
+
+}
+
+
+.titulo {
+
+    font-size: 30px;
+    color: #8b5e3c;
+
+}
+
+
+.frase-topo {
+
+    font-size: 18px;
+    color: #777;
+
+}
+
+
+.foto-principal {
+
+    width: 280px;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 8px solid #ead8c2;
+
+}
+
+
+
+.galeria {
+
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 25px;
+
+}
+
+
+.galeria img {
+
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 15px;
+
+}
+
+
+
+.carta {
+
+    margin-top: 30px;
+    padding: 20px;
+    background: #f8eee2;
+    border-radius: 15px;
+    font-size: 19px;
+    line-height: 1.7;
+    white-space: pre-line;
+
+}
+
+
+
+.audio {
+
+    margin-top: 30px;
+
+}
+
+
+.assinatura {
+
+    margin-top: 30px;
+    color: #8b5e3c;
+    font-style: italic;
+
+}
+
+
+.coracao {
+
+    font-size: 35px;
+
+}
+
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+<div class="coracao">
+❤️
+</div>
+
+
+<h1 class="titulo">
+Uma Memória Especial
+</h1>
+
+
+<p class="frase-topo">
+Uma lembrança guardada para sempre
+</p>
+
+
+
+<img 
+class="foto-principal"
+src="imagens/imagem 1.jpg">
+
+
+
+
+
+<div class="galeria">
+
+<img src="imagens/imagem 2.jpg">
+
+<img src="imagens/imagem 3.jpg">
+
+</div>
+
+
+
+
+
+<div class="carta" id="texto">
+
+PQ MEU TEXTO NÂO APARECE
+
+</div>
+
+
+
+
+
+<div class="audio">
+
+
+<h3>
+🎧 Ouvir mensagem
+</h3>
+
+
+<audio controls>
+
+<source src="audios/mensagem.mp3" type="audio/mpeg">
+
+Seu navegador não suporta áudio.
+
+</audio>
+
+
+</div>
+
+
+
+
+
+<div class="assinatura">
+
+Com carinho ❤️
+
+</div>
+
+
+</div>
+
+
+
+
+
+<script>
+
+
+fetch("textos/texto teste.txt")
+
+.then(resposta => resposta.text())
+
+.then(texto => {
+
+document.getElementById("texto").innerText = texto;
+
+})
+
+
+</script>
+
+
+</body>
+
+</html>
